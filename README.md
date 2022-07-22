@@ -9,3 +9,10 @@ To Do List
 - [ ] Quit Button
 - [ ] Change page color
 - [ ] Nightmode
+- [ ] Change Brush Colour
+- [ ] Change Brush
+- [ ] Colour picker/wheel
+- [ ] Shape picker/printer
+- [ ] Image uploader
+- [ ] File saver
+- [ ] 
