@@ -9,7 +9,7 @@ import ddf.minim.ugens.*;
 float xDrawingSurface, yDrawingSurface, widthDrawingSurface, heightDrawingSurface, diameterDrawing;
 boolean draw = false;
 float xQuit, yQuit, widthQuit, heightQuit;
-color buttonFill;
+color buttonFill=#FFFFFF;
 String quitText="X";
 PFont buttonFont;
 //
@@ -41,12 +41,6 @@ void setup () {
     println(instruct);
   }
   //
-  //Text Setup
-  String[] fontList = PFont.list(); //To list all fonts available on system
-  println("Start of Console");
-  printArray(fontList); //For listing all possible fonts to choose, then createFont
-  buttonFont = createFont ("Verdana", 10); //Must also Tools / Create Font / Find Font / Do Not Press "OK"
-  
   //Population
   xDrawingSurface = appWidth*0;
   yDrawingSurface = appHeight*0;
@@ -61,22 +55,31 @@ void setup () {
   widthQuit = appWidth*1/20; 
   heightQuit = appHeight*1/20;
   //
+   //Text Setup
+  //String[] fontList = PFont.list(); //To list all fonts available on system
+  println("Start of Console");
+  //printArray(fontList); //For listing all possible fonts to choose, then createFont
+  buttonFont = createFont ("Verdana", 10); //Must also Tools / Create Font / Find Font / Do Not Press "OK"
+  fill (#000000); //Ink
+  textAlign (CENTER, CENTER);
+  textFont (buttonFont, 15);
+  
 }//End setup
 //
 void draw () {
-  if (draw == true && mouseX>= xDrawingSurface && mouseX<=xDrawingSurface+widthDrawingSurface && mouseY>=yDrawingSurface && mouseY<=yDrawingSurface+heightDrawingSurface ) line(mouseX, mouseY, pmouseX, pmouseY);
-  textAlign (CENTER, CENTER);
-  
-  fill (0,0,0);
-  text (quitText, xQuit, yQuit, widthQuit, heightQuit);
-  fill (buttonFill);
+  fill(buttonFill);
   rect(xQuit, yQuit, widthQuit, heightQuit);
-  //Hover-over
+  
+  if (draw == true && mouseX>= xDrawingSurface && mouseX<=xDrawingSurface+widthDrawingSurface && mouseY>=yDrawingSurface && mouseY<=yDrawingSurface+heightDrawingSurface ) line(mouseX, mouseY, pmouseX, pmouseY);
+   //Hover-over
   if (mouseX> xQuit && mouseX< xQuit+widthQuit && mouseY>yQuit && mouseY<yQuit+heightQuit) {
     buttonFill = #FF0000;
   } else {
     buttonFill = #FFFFFF;
   }//End Hover-Over
+  fill(0,0,0);
+  text (quitText, xQuit, yQuit, widthQuit, heightQuit);
+  textAlign (CENTER, CENTER);
   //ellipse(mouseX, mouseY, diameterDrawing, diameterDrawing);//Drawing Tool
   
 }//End draw
