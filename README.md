@@ -8,10 +8,10 @@ To Do List
 - [ ] Eraser (i.e. circle stamping tool, fill with background (colour), remove stroke)
 - [x] Quit Button
 - [ ] Change page color
-~~- [ ] Nightmode~~
+- ~~[ ] Nightmode~~
 - [ ] Change Brush Colour
 - [ ] Change Brush
-~~- [ ] Colour picker/wheel~~
-~~- [ ] Shape picker/printer~~
+- ~~[ ] Colour picker/wheel~~
+- ~~[ ] Shape picker/printer~~
 - [ ] Image uploader
 - [ ] File saver
