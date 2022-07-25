@@ -15,4 +15,3 @@ To Do List
 - [ ] Shape picker/printer
 - [ ] Image uploader
 - [ ] File saver
-- [ ] 
