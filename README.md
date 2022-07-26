@@ -2,17 +2,19 @@
 comp sci
 
 To Do List
-- [ ] Page
-- [ ] Line Drawing Tool
+- [x] Page
+- [x] Line Drawing Tool
 - [ ] Circle Stampling Tool
 - [ ] Eraser (i.e. circle stamping tool, fill with background (colour), remove stroke)
-- [ ] Quit Button
+- [x] Quit Button
 - [ ] Change page color
-- [ ] Nightmode
+
+- [ ] ~~Nightmode~~
 - [ ] Change Brush Colour
 - [ ] Change Brush
-- [ ] Colour picker/wheel
-- [ ] Shape picker/printer
+
+- [ ] ~~Colour picker/wheel~~
+
+- [ ] ~~Shape picker/printer~~
 - [ ] Image uploader
 - [ ] File saver
-- [ ] 
