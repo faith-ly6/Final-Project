@@ -75,7 +75,7 @@ float xShade5, yShade5, widthShade5, heightShade5;
 //
  
 void moreButtons() {
-  size(900,700);//Landscape (Portrait or Sqaure)
+   size(900,700);//Landscape (Portrait or Sqaure)
   println (width, height, displayWidth, displayHeight);
   int appWidth = width;
   int appHeight = height;
@@ -98,7 +98,6 @@ void moreButtons() {
     appHeight *=0;
     println(instruct);
   }
-
   xBrushType1 = appWidth*5/8;
   yBrushType1 = appHeight*4/20;
   widthBrushType1 = appWidth*(1.66/3)/6;
@@ -359,6 +358,7 @@ void moreButtons() {
   heightShade5 = appHeight*1/20;
   //
 }
+
 void moreButtonDraw () {
  fill(#FFFFFF);
   rect(xBrushType1, yBrushType1, widthBrushType1, heightBrushType1);

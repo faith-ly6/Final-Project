@@ -10,6 +10,8 @@ Minim minim;
 AudioPlayer song1, song2;
 AudioMetaData songMetaData1, songMetaData2;
 //
+float xPButton, yPButton, widthPButton, heightPButton;
+float xMusicMenu, yMusicMenu, widthMusicMenu, heightMusicMenu;
 float xPaperButton, yPaperButton, widthPaperButton, heightPaperButton;
 float xBrushButton, yBrushButton, widthBrushButton, heightBrushButton;
 float xCanvasMenu, yCanvasMenu, widthCanvasMenu, heightCanvasMenu;
@@ -19,12 +21,12 @@ float xEraser, yEraser, widthEraser, heightEraser;
 float xQuit, yQuit, widthQuit, heightQuit;
 int lineWeight = 1;
 //
-color quitFill=#FFFFFF, lineFill, eraserFill=#FFFFFF, lineStroke=#C424FF;
+color quitFill=#FFFFFF, lineFill, eraserFill=#FFFFFF, lineStroke=#C424FF, canvasFill=#FFFFFF;
 //
 
 PFont buttonFont;
 //
-boolean draw = false, lineON=true, ellipseON=false, rectON=false, eraserON=false;
+boolean draw = false, lineON=true, ellipseON=false, rectON=false, eraserON=false, playON=false, pauseON=true;
 //
 void setup () {
   //Display Checker
@@ -61,7 +63,6 @@ void setup () {
   songMetaData2 = song2.getMetaData();
   //
   //Population
-  musicButtons();
   //
   xPaperButton = appWidth*7.2/8;
   yPaperButton = appHeight*2/20;
@@ -91,6 +92,17 @@ void setup () {
   widthBrush = appWidth*1/100;
   heightBrush = appHeight*1/100;
   //
+  xPButton = appWidth*3.23/4;
+  yPButton = appHeight*17/20;
+  widthPButton = appWidth*.65/20;
+  heightPButton = appHeight*1.1/20;
+  //
+  xMusicMenu = appWidth*5/8;
+  yMusicMenu = appHeight*4.75/6;
+  widthMusicMenu = appWidth*3/8; 
+  heightMusicMenu = appHeight*1.25/6;
+  //
+  //fill(canvasFill);
   rect(xDrawingSurface, yDrawingSurface, widthDrawingSurface, heightDrawingSurface);
   //
   xQuit = appWidth*19/20;
@@ -98,6 +110,7 @@ void setup () {
   widthQuit = appWidth*1/20; 
   heightQuit = appHeight*1/20;
   //
+   musicButtons();
    //Text Setup
   //String[] fontList = PFont.list(); //To list all fonts available on system
   println("Start of Console");
@@ -109,6 +122,16 @@ void setup () {
 }//End setup
 //
 void draw () {
+  if ( song1.isLooping() && song1.loopCount()!=-1 ) println("There are", song1.loopCount(), "loops left.");
+  if ( song1.isLooping() && song1.loopCount()==-1 ) println("Looping Infinity");
+  if ( song1.isPlaying() && !song1.isLooping() ) println("Play Once");
+  println("Song position", song1.position(), "Song Length", song1.length() ); //Amount of time left is a calculation
+  //
+  if ( song2.isLooping() && song2.loopCount()!=-1 ) println("There are", song2.loopCount(), "loops left.");
+  if ( song2.isLooping() && song2.loopCount()==-1 ) println("Looping Infinity");
+  if ( song2.isPlaying() && !song2.isLooping() ) println("Play Once");
+  println("Song position", song2.position(), "Song Length", song2.length() ); //Amount of time left is a calculation
+  //
   fill(lineFill);
   stroke(lineStroke);
   strokeWeight(lineWeight);
@@ -118,18 +141,24 @@ void draw () {
   stroke(#000000);
   strokeWeight (1);
   //
-  image (play, xPlay, yPlay, widthPlay, heightPlay);
-  image ( pause, xPause, yPause, widthPause, heightPause);
+  fill (#C1C1C1);
+  rect (xMusicMenu, yMusicMenu, widthMusicMenu, heightMusicMenu);
+  rect (xBrushButton, yBrushButton, widthBrushButton, heightBrushButton);
+  rect (xBrushMenu, yBrushMenu, widthBrushMenu, heightBrushMenu);
+  rect(xPaperButton, yPaperButton, widthPaperButton, heightPaperButton);
+  stroke (#C1C1C1);
+  rect (xPButton, yPButton, widthPButton, heightPButton);
+  stroke (#000000);
+  //
+  if (pauseON==true) image (play, xPlay, yPlay, widthPlay, heightPlay);
+  if (pauseON==false) image ( pause, xPause, yPause, widthPause, heightPause);
   image ( rewind, xRewind, yRewind, widthRewind, heightRewind);
   image ( forward, xForward, yForward, widthForward, heightForward);
   image ( next, xNext, yNext, widthNext, heightNext);
   image ( last, xLast, yLast, widthLast, heightLast);
   image ( loop, xLoop, yLoop, widthLoop, heightLoop);
   //
-  fill (#C1C1C1);
-  rect (xBrushButton, yBrushButton, widthBrushButton, heightBrushButton);
-  rect (xBrushMenu, yBrushMenu, widthBrushMenu, heightBrushMenu);
-  rect(xPaperButton, yPaperButton, widthPaperButton, heightPaperButton);
+  
   //rect(xCanvasMenu, yCanvasMenu, widthCanvasMenu, heightCanvasMenu);
  moreButtonDraw();
   fill(quitFill);
@@ -137,9 +166,7 @@ void draw () {
   //
   fill(#000000);
   ellipse (xBrush2, yBrush2, diatmeterBrush2, diatmeterBrush2);
-  rect(xBrush3, yBrush3, widthBrush3, heightBrush3);
- 
-  
+  rect(xBrush3, yBrush3, widthBrush3, heightBrush3); 
   //Hover-over
   if (mouseX> xQuit && mouseX< xQuit+widthQuit && mouseY>yQuit && mouseY<yQuit+heightQuit) {
     quitFill = #FF0000;
@@ -166,6 +193,57 @@ void keyPressed () {
 //
 void mousePressed () {
   //if (mouseX>= && mouseX<= + && mouseY>= && mouseY<= + ) {} 
+  //
+  if (mouseX>= xPButton && mouseX<= xPButton + widthPButton && mouseY>= yPButton && mouseY<= yPButton + heightPButton) {if (pauseON==false) {pauseON=true; playON=false;} else {pauseON=false; playON=true;}}
+  if (mouseX>= xPButton && mouseX<= xPButton + widthPButton && mouseY>= yPButton && mouseY<= yPButton + heightPButton) {if (pauseON==false) {if ( song1.isPlaying() ) {
+      song1.pause();
+    } else if ( song1.position() >= song1.length() - song1.length()*1/5 ) {
+      song1.rewind();
+      song1.play();
+    } else {
+      song1.play();
+    }
+  }
+  if (mouseX>= xPButton && mouseX<= xPButton + widthPButton && mouseY>= yPButton && mouseY<= yPButton + heightPButton) {if (pauseON==false) {if ( song2.isPlaying() ) {
+      song2.pause();
+    } else if ( song2.position() >= song2.length() - song2.length()*1/5 ) {
+      song2.rewind();
+      song2.play();
+    } else {
+      song2.play();
+    }
+  }
+  }
+  if (mouseX>= xPButton && mouseX<= xPButton + widthPButton && mouseY>= yPButton && mouseY<= yPButton + heightPButton) {if (playON==false) {if ( song1.isPlaying() ) {
+      song1.pause();
+    } else if ( song1.position() >= song1.length() - song1.length()*1/5 ) {
+      song1.rewind();
+      song1.play();
+    } else {
+      song1.play();
+    }
+  }
+  }
+
+  if (mouseX>= xPButton && mouseX<= xPButton + widthPButton && mouseY>= yPButton && mouseY<= yPButton + heightPButton) {if (playON==false) {if ( song2.isPlaying() ) {
+          song2.pause();
+        } else if ( song2.position() >= song2.length() - song2.length()*1/5 ) {
+          song2.rewind();
+          song2.play();
+        } else {
+          song2.play();
+        }
+      }
+
+ if (mouseX>= xRewind && mouseX<= xRewind + widthRewind && mouseY>= yRewind && mouseY<= yRewind + heightRewind) {if (song1.isPlaying()) {song1.skip(-10000);} //else {song2.skip(-10000);
+  }
+  if (mouseX>= xForward && mouseX<= xForward + widthForward && mouseY>= yForward && mouseY<= yForward + heightForward) {if (song1.isPlaying()) {song1.skip(10000);} //else {song2.skip(-10000);
+  }
+  if (mouseX>= xNext && mouseX<= xNext + widthNext && mouseY>= yNext && mouseY<= yNext + heightNext) {song1.play();song2.pause();} else {song2.play();song1.pause();}
+  
+  if (mouseX>= xLast && mouseX<= xLast + widthLast && mouseY>= yLast && mouseY<= yLast + heightLast) {song1.play(); song2.pause();} else {song1.pause(); song2.play();}
+  
+  //
   if (mouseX>= xBrushType1 && mouseX<=xBrushType1+widthBrushType1 && mouseY>= yBrushType1 && mouseY<=yBrushType1+heightBrushType1 ) {lineON=true; ellipseON=false; rectON=false;}
   if (mouseX>= xBrushType2 && mouseX<=xBrushType2+widthBrushType2 && mouseY>= yBrushType2 && mouseY<=yBrushType2+heightBrushType2 ) {lineON=false; ellipseON=true; rectON=false;}
   if (mouseX>= xBrushType3 && mouseX<=xBrushType3+widthBrushType3 && mouseY>= yBrushType3 && mouseY<=yBrushType3+heightBrushType3 ) {lineON=false; ellipseON=false; rectON=true;}
