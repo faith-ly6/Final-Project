@@ -72,294 +72,10 @@ float xShade2, yShade2, widthShade2, heightShade2;
 float xShade3, yShade3, widthShade3, heightShade3;
 float xShade4, yShade4, widthShade4, heightShade4;
 float xShade5, yShade5, widthShade5, heightShade5;
+Boolean red12=false;
 //
 
 //
-
-void brushButtons() {
-  size(900, 700);//Landscape (Portrait or Sqaure)
-  println (width, height, displayWidth, displayHeight);
-  int appWidth = width;
-  int appHeight = height;
-  if (width > displayWidth || height > displayHeight) {//CANVAS in Display Checker
-    //CANVAS Too Big
-    appWidth =displayWidth;
-    appHeight = displayHeight;
-    println ("CANVAS needed to be readjusted to fit on your monitor.");
-  } else {
-    println("CANVAS is Good to go on your display.");
-  }//End CANVAS in Display Checker
-  //Display Orientation
-  String ls = "Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru turn your phun";
-  String orientation = ( appWidth>=appHeight) ? ls : p; //Ternary Operator, repeats the IF-Else structure to populated a variable
-  println( DO, orientation );
-  if ( orientation==ls ) {//Test for chosen display orientation
-    println("Good to go");
-  } else {
-    appWidth *=0; //assignment operator, words like appWidth=appWidth*0
-    appHeight *=0;
-    println(instruct);
-  }
-  xBrushType1 = appWidth*5/8;
-  yBrushType1 = appHeight*4/20;
-  widthBrushType1 = appWidth*(1.66/3)/6;
-  heightBrushType1 = appHeight*1/1/11;
-  //
-  xBrushType2 = appWidth*5.75/8;
-  yBrushType2 = appHeight*4/20;
-  widthBrushType2 = appWidth*(1.66/3)/6;
-  heightBrushType2 = appHeight*1/1/11;
-  //
-  xBrush2 = appWidth*6.1/8;
-  yBrush2 = appHeight*5/20;
-  diatmeterBrush2 = appHeight*1/30;
-  //
-  xBrushType3 = appWidth*6.47/8;
-  yBrushType3 = appHeight*4/20;
-  widthBrushType3 = appWidth*(1.65/3)/6;
-  heightBrushType3 = appHeight*1/11;
-  //
-  xBrush3 = appWidth*6.7/8;
-  yBrush3 = appHeight*4.6/20;
-  widthBrush3 = appWidth*1/30;
-  heightBrush3 = appHeight*1/30;
-  //
-  xEraser = appWidth*5/8;
-  yEraser = appHeight*5.8/20; 
-  widthEraser = appWidth*1.65/6;
-  heightEraser = appHeight*1/20;
-  //
-  xXS = appWidth*5/8;
-  yXS = appHeight*6.80/20;
-  widthXS = appWidth*(1.65/5)/6;
-  heightXS = appHeight*1/20;
-  //
-  xS = appWidth*5.43/8;
-  yS = appHeight*6.80/20;
-  widthS = appWidth*(1.65/5)/6;
-  heightS = appHeight*1/20;
-  //
-  xM = appWidth*5.86/8;
-  yM = appHeight*6.80/20;
-  widthM = appWidth*(1.65/5)/6;
-  heightM = appHeight*1/20;
-  //
-  xL = appWidth*6.30/8;
-  yL = appHeight*6.80/20;
-  widthL = appWidth*(1.65/5)/6;
-  heightL = appHeight*1/20;
-  //
-  xXL = appWidth*6.75/8;
-  yXL = appHeight*6.80/20;
-  widthXL = appWidth*(1.65/5)/6;
-  heightXL = appHeight*1/20;
-  //
-  xRed1 = appWidth*5/8;
-  yRed1 = appHeight*7.8/20;
-  widthRed1 = appWidth*(1.65/5)/6;
-  heightRed1 = appHeight*1/20;
-  //
-  xRed2 = appWidth*5.43/8;
-  yRed2 = appHeight*7.8/20;
-  widthRed2 = appWidth*(1.65/5)/6;
-  heightRed2 = appHeight*1/20;
-  //
-  xRed3 = appWidth*5.86/8;
-  yRed3 = appHeight*7.8/20;
-  widthRed3 = appWidth*(1.65/5)/6;
-  heightRed3 = appHeight*1/20;
-  //
-  xRed4 = appWidth*6.3/8;
-  yRed4 = appHeight*7.8/20;
-  widthRed4 = appWidth*(1.65/5)/6;
-  heightRed4 = appHeight*1/20;
-  //
-  xRed5 = appWidth*6.75/8;
-  yRed5 = appHeight*7.8/20;
-  widthRed5 = appWidth*(1.65/5)/6;
-  heightRed5 = appHeight*1/20;
-  //
-  xOrange1 = appWidth*5/8;
-  yOrange1 = appHeight*8.8/20; 
-  widthOrange1 = appWidth*(1.65/5)/6;
-  heightOrange1 = appHeight*1/20;
-  //
-  xOrange2 = appWidth*5.43/8;
-  yOrange2 = appHeight*8.8/20; 
-  widthOrange2 = appWidth*(1.65/5)/6;
-  heightOrange2 = appHeight*1/20;
-  //
-  xOrange3 = appWidth*5.86/8;
-  yOrange3 = appHeight*8.8/20; 
-  widthOrange3 = appWidth*(1.65/5)/6;
-  heightOrange3 = appHeight*1/20;
-  //
-  xOrange4 = appWidth*6.3/8;
-  yOrange4 = appHeight*8.8/20; 
-  widthOrange4 = appWidth*(1.65/5)/6;
-  heightOrange4 = appHeight*1/20;
-  //
-  xOrange5 = appWidth*6.75/8;
-  yOrange5 = appHeight*8.8/20; 
-  widthOrange5 = appWidth*(1.65/5)/6;
-  heightOrange5 = appHeight*1/20;
-  //
-  xYellow1 = appWidth*5/8;
-  yYellow1 = appHeight*9.8/20; 
-  widthYellow1 = appWidth*(1.65/5)/6;
-  heightYellow1 = appHeight*1/20;
-  //
-  xYellow2 = appWidth*5.43/8;
-  yYellow2 = appHeight*9.8/20; 
-  widthYellow2 = appWidth*(1.65/5)/6;
-  heightYellow2 = appHeight*1/20;
-  //
-  xYellow3 = appWidth*5.86/8;
-  yYellow3 = appHeight*9.8/20; 
-  widthYellow3 = appWidth*(1.65/5)/6;
-  heightYellow3 = appHeight*1/20;
-  //
-  xYellow4 = appWidth*6.3/8;
-  yYellow4 = appHeight*9.8/20; 
-  widthYellow4 = appWidth*(1.65/5)/6;
-  heightYellow4 = appHeight*1/20;
-  //
-  xYellow5 = appWidth*6.75/8;
-  yYellow5 = appHeight*9.8/20; 
-  widthYellow5 = appWidth*(1.65/5)/6;
-  heightYellow5 = appHeight*1/20;
-  //
-  xGreen1 = appWidth*5/8;
-  yGreen1 = appHeight*10.8/20; 
-  widthGreen1 = appWidth*(1.65/5)/6;
-  heightGreen1 = appHeight*1/20;
-  //
-  xGreen2 = appWidth*5.43/8;
-  yGreen2 = appHeight*10.8/20; 
-  widthGreen2 = appWidth*(1.65/5)/6;
-  heightGreen2 = appHeight*1/20;
-  //
-  xGreen3 = appWidth*5.86/8;
-  yGreen3 = appHeight*10.8/20; 
-  widthGreen3 = appWidth*(1.65/5)/6;
-  heightGreen3 = appHeight*1/20;
-  //
-  xGreen4 = appWidth*6.3/8;
-  yGreen4 = appHeight*10.8/20; 
-  widthGreen4 = appWidth*(1.65/5)/6;
-  heightGreen4 = appHeight*1/20;
-  //
-  xGreen5 = appWidth*6.75/8;
-  yGreen5 = appHeight*10.8/20; 
-  widthGreen5 = appWidth*(1.65/5)/6;
-  heightGreen5 = appHeight*1/20;
-  //
-  xBlue1 = appWidth*5/8;
-  yBlue1 = appHeight*11.8/20; 
-  widthBlue1 = appWidth*(1.65/5)/6;
-  heightBlue1 = appHeight*1/20;
-  //
-  xBlue2 = appWidth*5.43/8;
-  yBlue2 = appHeight*11.8/20; 
-  widthBlue2 = appWidth*(1.65/5)/6;
-  heightBlue2 = appHeight*1/20;
-  //
-  xBlue3 = appWidth*5.86/8;
-  yBlue3 = appHeight*11.8/20; 
-  widthBlue3 = appWidth*(1.65/5)/6;
-  heightBlue3 = appHeight*1/20;
-  //
-  xBlue4 = appWidth*6.3/8;
-  yBlue4 = appHeight*11.8/20; 
-  widthBlue4 = appWidth*(1.65/5)/6;
-  heightBlue4 = appHeight*1/20;
-  //
-  xBlue5 = appWidth*6.75/8;
-  yBlue5 = appHeight*11.8/20; 
-  widthBlue5 = appWidth*(1.65/5)/6;
-  heightBlue5 = appHeight*1/20;
-  //
-  xPurple1 = appWidth*5/8;
-  yPurple1 = appHeight*12.8/20; 
-  widthPurple1 = appWidth*(1.65/5)/6;
-  heightPurple1 = appHeight*1/20;
-  //
-  xPurple2 = appWidth*5.43/8;
-  yPurple2 = appHeight*12.8/20; 
-  widthPurple2 = appWidth*(1.65/5)/6;
-  heightPurple2 = appHeight*1/20;
-  //
-  xPurple3 = appWidth*5.86/8;
-  yPurple3 = appHeight*12.8/20; 
-  widthPurple3 = appWidth*(1.65/5)/6;
-  heightPurple3 = appHeight*1/20;
-  //
-  xPurple4 = appWidth*6.3/8;
-  yPurple4 = appHeight*12.8/20; 
-  widthPurple4 = appWidth*(1.65/5)/6;
-  heightPurple4 = appHeight*1/20;
-  //
-  xPurple5 = appWidth*6.75/8;
-  yPurple5 = appHeight*12.8/20; 
-  widthPurple5 = appWidth*(1.65/5)/6;
-  heightPurple5 = appHeight*1/20;
-  //
-  xBrown1 = appWidth*5/8;
-  yBrown1 = appHeight*13.8/20; 
-  widthBrown1 = appWidth*(1.65/5)/6;
-  heightBrown1 = appHeight*1/20;
-  //
-  xBrown1 = appWidth*5/8;
-  yBrown1 = appHeight*13.8/20; 
-  widthBrown1 = appWidth*(1.65/5)/6;
-  heightBrown1 = appHeight*1/20;
-  //
-  xBrown2 = appWidth*5.43/8;
-  yBrown2 = appHeight*13.8/20; 
-  widthBrown2 = appWidth*(1.65/5)/6;
-  heightBrown2 = appHeight*1/20;
-  //
-  xBrown3 = appWidth*5.86/8;
-  yBrown3 = appHeight*13.8/20; 
-  widthBrown3 = appWidth*(1.65/5)/6;
-  heightBrown3 = appHeight*1/20;
-  //
-  xBrown4 = appWidth*6.3/8;
-  yBrown4 = appHeight*13.8/20; 
-  widthBrown4 = appWidth*(1.65/5)/6;
-  heightBrown4 = appHeight*1/20;
-  //
-  xBrown5 = appWidth*6.75/8;
-  yBrown5 = appHeight*13.8/20; 
-  widthBrown5 = appWidth*(1.65/5)/6;
-  heightBrown5 = appHeight*1/20;
-  //
-  xShade1 = appWidth*5/8;
-  yShade1 = appHeight*14.8/20; 
-  widthShade1 = appWidth*(1.65/5)/6;
-  heightShade1 = appHeight*1/20;
-  //
-  xShade2 = appWidth*5.43/8;
-  yShade2 = appHeight*14.8/20; 
-  widthShade2 = appWidth*(1.65/5)/6;
-  heightShade2 = appHeight*1/20;
-  //
-  xShade3 = appWidth*5.86/8;
-  yShade3 = appHeight*14.8/20; 
-  widthShade3 = appWidth*(1.65/5)/6;
-  heightShade3 = appHeight*1/20;
-  //
-  xShade4 = appWidth*6.3/8;
-  yShade4 = appHeight*14.8/20; 
-  widthShade4 = appWidth*(1.65/5)/6;
-  heightShade4 = appHeight*1/20;
-  //
-  xShade5 = appWidth*6.75/8;
-  yShade5 = appHeight*14.8/20; 
-  widthShade5 = appWidth*(1.65/5)/6;
-  heightShade5 = appHeight*1/20;
-  //
-}
 
 void brushButtonDraw () {
 
@@ -470,7 +186,7 @@ void brushButtonDraw () {
     fill(shade5);
     rect(xShade5, yShade5, widthShade5, heightShade5);
     //
-    fill(#000000);
+    fill(shade1);
     ellipse (xBrush2, yBrush2, diatmeterBrush2, diatmeterBrush2);
     rect(xBrush3, yBrush3, widthBrush3, heightBrush3);
   if (mouseX>= xXS && mouseX<= xXS+ widthXS && mouseY>= yXS && mouseY<= yXS + heightXS) {
@@ -498,7 +214,10 @@ void brushButtonDraw () {
   } else {
     xLButtonFill= #FFFFFF;
   }
-  
+  if (red12==true){
+    lineStroke= #FF0307; 
+    lineFill= #FF0307;
+  }
   }
 }
 void brushButtonsMouse () {
@@ -536,8 +255,8 @@ void brushButtonsMouse () {
   }
   //
   if (mouseX>= xRed1 && mouseX<= xRed1 + widthRed1 && mouseY>= yRed1 && mouseY<= yRed1 + heightRed1) {
-    lineStroke= #FF0307; 
-    lineFill= #FF0307;
+    red12=true;
+    
   }
   if (mouseX>= xRed2 && mouseX<= xRed2 + widthRed2 && mouseY>= yRed2 && mouseY<= yRed2 + heightRed2) {
     lineStroke= #FF3134; 
@@ -687,20 +406,20 @@ void brushButtonsMouse () {
     lineFill=#000000;
   }
   if (mouseX>= xShade2 && mouseX<= xShade2 + widthShade2 && mouseY>= yShade2 && mouseY<= yShade2 + heightShade2) {
-    lineStroke=shade2; 
-    lineFill=shade2;
+    lineStroke=#272626; 
+    lineFill=#272626;
   }
   if (mouseX>= xShade3 && mouseX<= xShade3 + widthShade3 && mouseY>= yShade3 && mouseY<= yShade3 + heightShade3) {
-    lineStroke=shade3; 
-    lineFill=shade3;
+    lineStroke=#50504F; 
+    lineFill=#50504F;
   }
   if (mouseX>= xShade4 && mouseX<= xShade4 + widthShade4 && mouseY>= yShade4 && mouseY<= yShade4 + heightShade4) {
-    lineStroke=shade4; 
-    lineFill=shade4;
+    lineStroke=#B2B2B2; 
+    lineFill=#B2B2B2;
   }
   if (mouseX>= xShade5 && mouseX<= xShade5 + widthShade5 && mouseY>= yShade5 && mouseY<= yShade5 + heightShade5) {
-    lineStroke=shade5; 
-    lineFill=shade5;
+    lineStroke=#FFFFFF; 
+    lineFill=#FFFFFF;
   }
 
   if (mouseX>=xEraser && mouseX<=xEraser+widthEraser && mouseY>=yEraser && mouseY<=yEraser+heightEraser) {

@@ -7,37 +7,17 @@ String xSText="XS", sText="S", mText="M", lText="L", xLText="XL";
 String canvasText1 = "#FFFFFF", canvasText2 = "#DEBD7B", canvasText3 = "#000000";
 String songTitle="Glass - Anno Domini Beats";
 String template="Pages";
+String noPages="Clear";
 
 void texts () {
-  size(900,700);//Landscape (Portrait or Sqaure)
-  println (width, height, displayWidth, displayHeight);
-  int appWidth = width;
-  int appHeight = height;
-  if (width > displayWidth || height > displayHeight) {//CANVAS in Display Checker
-    //CANVAS Too Big
-    appWidth =displayWidth;
-    appHeight = displayHeight;
-    println ("CANVAS needed to be readjusted to fit on your monitor.");
-  } else {
-    println("CANVAS is Good to go on your display.");
-  }//End CANVAS in Display Checker
-  //Display Orientation
-  String ls = "Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru turn your phun";
-  String orientation = ( appWidth>=appHeight) ? ls : p; //Ternary Operator, repeats the IF-Else structure to populated a variable
-  println( DO, orientation );
-  if ( orientation==ls ) {//Test for chosen display orientation
-    println("Good to go");
-  } else {
-    appWidth *=0; //assignment operator, words like appWidth=appWidth*0
-    appHeight *=0;
-    println(instruct);
-  }
+   size(900, 700);//Landscape (Portrait or Sqaure)
   //
 fill(0,0,0);
   textFont (buttonFont, 18);
   textAlign (CENTER, CENTER);
   text (quitText, xQuit, yQuit, widthQuit, heightQuit);
   text (template,xtempButton, ytempButton, widthTempButton, heightTempButton); 
+  text (noPages, xNoPage, yNoPage, widthNoPage, heightNoPage);
   text (paperButtonText, xPaperButton, yPaperButton, widthPaperButton, heightPaperButton);
   //textAlign (CENTER,TOP);
   text (brushButtonText, xBrushButton, yBrushButton, widthBrushButton, heightBrushButton);
@@ -102,15 +82,17 @@ fill(0,0,0);
   text (shadeText2, xShade2, yShade2, widthShade2, heightShade2);
   text (shadeText3, xShade3, yShade3, widthShade3, heightShade3);
   }
+  if (pButtonON==true) {
   textFont (buttonFont, 10);
   fill(#000000);
   text (canvasText1, xCanvasFill1, yCanvasFill1, widthCanvasFill1, heightCanvasFill1);
   text (canvasText2, xCanvasFill2, yCanvasFill2, widthCanvasFill2, heightCanvasFill2); 
   fill(#FFFFFF);
   text (canvasText3, xCanvasFill3, yCanvasFill3, widthCanvasFill3, heightCanvasFill3);
+  }
   fill (#000000);
   textFont (buttonFont, 22);
   textAlign (CENTER,TOP);
   text (songTitle, xMusicMenu, yMusicMenu, widthMusicMenu, heightMusicMenu);
-  
+  fill (#FFFFFF);
 }

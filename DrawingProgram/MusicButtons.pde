@@ -31,33 +31,14 @@ Boolean widthLastLarger=false, heightLastLarger=false;
 Boolean widthLoopLarger=false, heightLoopLarger=false;
 //
 PImage pause, play, rewind, forward, next, last, loop;
+
 //
 
 //
 void musicButtons () {
-   size(900,700);//Landscape (Portrait or Sqaure)
-  println (width, height, displayWidth, displayHeight);
-  int appWidth = width;
-  int appHeight = height;
-  if (width > displayWidth || height > displayHeight) {//CANVAS in Display Checker
-    //CANVAS Too Big
-    appWidth =displayWidth;
-    appHeight = displayHeight;
-    println ("CANVAS needed to be readjusted to fit on your monitor.");
-  } else {
-    println("CANVAS is Good to go on your display.");
-  }//End CANVAS in Display Checker
-  //Display Orientation
-  String ls = "Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru turn your phun";
-  String orientation = ( appWidth>=appHeight) ? ls : p; //Ternary Operator, repeats the IF-Else structure to populated a variable
-  println( DO, orientation );
-  if ( orientation==ls ) {//Test for chosen display orientation
-    println("Good to go");
-  } else {
-    appWidth *=0; //assignment operator, words like appWidth=appWidth*0
-    appHeight *=0;
-    println(instruct);
-  }
+
+
+   size(900, 700);//Landscape (Portrait or Sqaure)
 //Images
   play = loadImage("../images/playbutton.png");//Dimensions width 481, height 519
   int playWidth = 481;
@@ -179,45 +160,7 @@ void musicButtons () {
   if (heightLoopLarger == true) loopHeightRatio = loopSmallerDimension / loopLargerDimension; 
   //
   //
-  xPButton = appWidth*3.23/4;
-  yPButton = appHeight*17/20;
-  widthPButton = appWidth*.65/20;
-  heightPButton = appHeight*1.1/20;
-  //
-  xPlay = appWidth*3.2/4;
-  yPlay = appHeight*17/20;
-  widthPlay = appWidth*1/20; 
-  heightPlay = appHeight*1.5/20;
-  //
-  xPause = appWidth*3.2/4;
-  yPause = appHeight*17.25/20;
-  widthPause = appWidth*1/20; 
-  heightPause = appHeight*1/20;
-  //
-  xRewind = appWidth*3/4;
-  yRewind = appHeight*17.25/20;
-  widthRewind = appWidth*1/20; 
-  heightRewind = appHeight*1/20;
-  //
-  xNext = appWidth*3.6/4;
-  yNext = appHeight*17.25/20;
-  widthNext = appWidth*1/20; 
-  heightNext = appHeight*1/20;
-  //
-  xForward = appWidth*3.4/4;
-  yForward = appHeight*17.25/20;
-  widthForward = appWidth*1/20; 
-  heightForward = appHeight*1/20;
-  //
-  xLast = appWidth*2.8/4;
-  yLast = appHeight*17.25/20;
-  widthLast = appWidth*1/20; 
-  heightLast = appHeight*1/20;
-  //
-  xLoop = appWidth*3.23/4;
-  yLoop = appHeight*18/20;
-  widthLoop = appWidth*.75/20; 
-  heightLoop = appHeight*1/20;
+  
   //
 }
 void musicButtonsDraw () {
