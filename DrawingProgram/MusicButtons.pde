@@ -243,3 +243,70 @@ void musicButtonsDraw () {
   println( "Song Length (in minutes & seconds): ", (songMetaData1.length()/1000)/60, " minute", (songMetaData1.length()/1000)-((songMetaData1.length()/1000)/60 * 60), " seconds" );
   println( "Song Title: ", songMetaData1.title() );
 }
+void mouseMusic () {
+    //
+  if (mouseX>= xPButton && mouseX<= xPButton + widthPButton && mouseY>= yPButton && mouseY<= yPButton + heightPButton) {
+    if (pauseON==false) {
+      pauseON=true; 
+      playON=false;
+    } else {
+      pauseON=false; 
+      playON=true;
+    }
+  }
+  if (mouseX>= xPButton && mouseX<= xPButton + widthPButton && mouseY>= yPButton && mouseY<= yPButton + heightPButton) {
+    if (pauseON==false) {
+      if ( song1.isPlaying() ) {
+        song1.pause();
+      } else if ( song1.position() >= song1.length() - song1.length()*1/5 ) {
+        song1.rewind();
+        song1.play();
+      } else {
+        song1.play();
+      }
+    }
+  }
+  if (mouseX>= xPButton && mouseX<= xPButton + widthPButton && mouseY>= yPButton && mouseY<= yPButton + heightPButton) {
+    if (pauseON==true) {
+      if ( song1.isPlaying() ) {
+        song1.pause();
+      } else if ( song1.position() >= song1.length() - song1.length()*1/5 ) {
+        song1.rewind();
+        song1.play();
+      } else {
+        song1.play();
+      }
+    }
+  }
+  if (mouseX>= xRewind && mouseX<= xRewind + widthRewind && mouseY>= yRewind && mouseY<= yRewind + heightRewind) {
+    if (song1.isPlaying()) {
+      song1.skip(-5000);
+    } else {
+      song2.skip(-5000);
+    }
+  }
+  if (mouseX>= xForward && mouseX<= xForward + widthForward && mouseY>= yForward && mouseY<= yForward + heightForward) {
+    if (song1.isPlaying()) {
+      song1.skip(5000);
+    } else {
+      song2.skip(-5000);
+    }
+  }
+  if (mouseX>= xLast && mouseX<= xLast + widthLast && mouseY>= yLast && mouseY<= yLast + heightLast) {
+    if (song1.isPlaying()) {
+      song1.skip(-10000);
+    } else {
+      song2.skip(-10000);
+    }
+  }
+  if (mouseX>= xNext && mouseX<= xNext + widthNext && mouseY>= yNext && mouseY<= yNext + heightNext) {
+    if (song1.isPlaying()) {
+      song1.skip(10000);
+    } else {
+      song2.skip(-10000);
+    }
+  }
+  if (mouseX>= xLoop && mouseX<= xLoop + widthLoop&& mouseY>= yLoop && mouseY<= yLoop + heightLoop) {
+    if (song1.isPlaying()) song1.loop();
+  }
+}

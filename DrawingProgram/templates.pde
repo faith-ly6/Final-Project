@@ -187,7 +187,7 @@ void templates() {
   heightTemp3C = appHeight*1;
 }
 void templatesDraw () {
-   image(temp1, xTemp1, yTemp1, widthTemp1, heightTemp1);
+  image(temp1, xTemp1, yTemp1, widthTemp1, heightTemp1);
   image(temp2, xTemp2, yTemp2, widthTemp2, heightTemp2);
   image(temp3, xTemp3, yTemp3, widthTemp3, heightTemp3);
   if (temp1ON==true) image(temp1, xTemp1C, yTemp1C, widthTemp1C, heightTemp1C);
