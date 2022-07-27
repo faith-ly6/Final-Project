@@ -77,11 +77,6 @@ void setup () {
   widthPaperButton = appWidth*1/10;
   heightPaperButton = appHeight*1.1/11;
   //
-  //xCanvasMenu = appWidth*5.00/8;
-  //yCanvasMenu = appHeight*2/20;
-  //widthCanvasMenu = appWidth*1.66/6;
-  //heightCanvasMenu = appHeight*1.1/11;
-  //
   xCanvasFill1 = appWidth*5/8;
   yCanvasFill1 = appHeight*2/20;
   widthCanvasFill1 = appWidth*(1.65/3)/6; 
@@ -121,15 +116,9 @@ void setup () {
   heightMusicMenu = appHeight*1.25/6;
   //
   xtempButton = appWidth*7.2/8;
-  ytempButton = appHeight*1/20;
+  ytempButton = appHeight*0/20;
   widthTempButton = appWidth*1/10;
-  heightTempButton = appHeight*1/20;
-  //
-  xQuit = appWidth*19/20;
-  yQuit = appHeight*0/20;
-  widthQuit = appWidth*1/20; 
-  heightQuit = appHeight*1/20;
-  //
+  heightTempButton = appHeight*2/20;
   //
   fill(canvasFill);
   rect(xDrawingSurface, yDrawingSurface, widthDrawingSurface, heightDrawingSurface);
@@ -146,10 +135,7 @@ void setup () {
 }//End setup
 //
 void draw () {
-  if ( song1.isLooping() && song1.loopCount()!=-1 ) println("There are", song1.loopCount(), "loops left.");
-  if ( song1.isLooping() && song1.loopCount()==-1 ) println("Looping Infinity");
-  if ( song1.isPlaying() && !song1.isLooping() ) println("Play Once");
-  println("Song position", song1.position(), "Song Length", song1.length() ); //Amount of time left is a calculation
+  
   
   //
   fill(lineFill);
@@ -160,9 +146,6 @@ void draw () {
   if (rectON==true) {if (draw == true && mouseX>= xDrawingSurface && mouseX<=xDrawingSurface+widthDrawingSurface && mouseY>=yDrawingSurface && mouseY<=yDrawingSurface+heightDrawingSurface ) rect(mouseX, mouseY, widthBrush, heightBrush);}
   stroke(#000000);
   strokeWeight (1);
-  //
-  fill(quitFill);
-  rect(xQuit, yQuit, widthQuit, heightQuit);
   //
   fill (brushButtonFill);
   rect (xBrushButton, yBrushButton, widthBrushButton, heightBrushButton);
@@ -193,11 +176,6 @@ void draw () {
   //
   
   //Hover-over
-  if (mouseX> xQuit && mouseX< xQuit+widthQuit && mouseY>yQuit && mouseY<yQuit+heightQuit) {
-    quitFill = #FF0000;
-  } else {
-    quitFill = #FFFFFF;
-  }
   if (mouseX>=xBrushButton && mouseX<= xBrushButton+ widthBrushButton&& mouseY>= yBrushButton && mouseY<= yBrushButton + heightBrushButton ) {
     brushButtonFill= #E0DEDE;
   } else {
@@ -230,6 +208,7 @@ void draw () {
 }//End draw
 //
 void keyPressed () {
+  if (key=='q' || key=='Q') exit();
 }//End keyPressed
 //
 void mousePressed () {

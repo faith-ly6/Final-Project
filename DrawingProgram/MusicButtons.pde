@@ -233,4 +233,13 @@ void musicButtonsDraw () {
   image ( next, xNext, yNext, widthNext, heightNext);
   image ( last, xLast, yLast, widthLast, heightLast);
   image ( loop, xLoop, yLoop, widthLoop, heightLoop);
+  //
+  if ( song1.isLooping() && song1.loopCount()!=-1 ) println("There are", song1.loopCount(), "loops left.");
+  if ( song1.isLooping() && song1.loopCount()==-1 ) println("Looping Infinity");
+  if ( song1.isPlaying() && !song1.isLooping() ) println("Play Once");
+  println("Song position", song1.position(), "Song Length", song1.length() ); //Amount of time left is a calculation
+  println( "Song Length (in milliseconds): ", songMetaData1.length() );
+  println( "Song Length (in seconds): ", songMetaData1.length()/1000 );
+  println( "Song Length (in minutes & seconds): ", (songMetaData1.length()/1000)/60, " minute", (songMetaData1.length()/1000)-((songMetaData1.length()/1000)/60 * 60), " seconds" );
+  println( "Song Title: ", songMetaData1.title() );
 }
