@@ -4,8 +4,9 @@ String paperButtonText="Canvas";
 String brush1Text="/";
 String quitText="X";
 String xSText="XS", sText="S", mText="M", lText="L", xLText="XL";
-
-
+String canvasText1 = "#FFFFFF", canvasText2 = "#DEBD7B", canvasText3 = "#000000";
+String songTitle="Glass - Anno Domini Beats";
+String template="Pages";
 
 void texts () {
   size(900,700);//Landscape (Portrait or Sqaure)
@@ -34,10 +35,13 @@ void texts () {
   //
 fill(0,0,0);
   textFont (buttonFont, 18);
-  text (quitText, xQuit, yQuit, widthQuit, heightQuit);
   textAlign (CENTER, CENTER);
+  text (quitText, xQuit, yQuit, widthQuit, heightQuit);
+  text (template,xtempButton, ytempButton, widthTempButton, heightTempButton); 
   text (paperButtonText, xPaperButton, yPaperButton, widthPaperButton, heightPaperButton);
+  //textAlign (CENTER,TOP);
   text (brushButtonText, xBrushButton, yBrushButton, widthBrushButton, heightBrushButton);
+  if (buttonON==true) {
   text (eraserText, xEraser, yEraser, widthEraser, heightEraser);
   text (xSText, xXS, yXS, widthXS, heightXS);
   text (sText, xS, yS, widthS, heightS);
@@ -47,6 +51,8 @@ fill(0,0,0);
   textFont (buttonFont, 44);
   text (brush1Text, xBrushType1, yBrushType1, widthBrushType1, heightBrushType1);
   textFont (buttonFont, 10);
+  
+  //
   text (redText1, xRed1, yRed1, widthRed1, heightRed1); 
   text (redText2, xRed2, yRed2, widthRed2, heightRed2); 
   text (redText3, xRed3, yRed3, widthRed3, heightRed3); 
@@ -95,4 +101,16 @@ fill(0,0,0);
   text (shadeText1, xShade1, yShade1, widthShade1, heightShade1);
   text (shadeText2, xShade2, yShade2, widthShade2, heightShade2);
   text (shadeText3, xShade3, yShade3, widthShade3, heightShade3);
+  }
+  textFont (buttonFont, 10);
+  fill(#000000);
+  text (canvasText1, xCanvasFill1, yCanvasFill1, widthCanvasFill1, heightCanvasFill1);
+  text (canvasText2, xCanvasFill2, yCanvasFill2, widthCanvasFill2, heightCanvasFill2); 
+  fill(#FFFFFF);
+  text (canvasText3, xCanvasFill3, yCanvasFill3, widthCanvasFill3, heightCanvasFill3);
+  fill (#000000);
+  textFont (buttonFont, 22);
+  textAlign (CENTER,TOP);
+  text (songTitle, xMusicMenu, yMusicMenu, widthMusicMenu, heightMusicMenu);
+  
 }

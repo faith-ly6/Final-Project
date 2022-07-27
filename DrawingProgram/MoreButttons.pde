@@ -115,7 +115,7 @@ void moreButtons() {
   xBrushType3 = appWidth*6.47/8;
   yBrushType3 = appHeight*4/20;
   widthBrushType3 = appWidth*(1.65/3)/6;
-  heightBrushType3 = appHeight*1/1/11;
+  heightBrushType3 = appHeight*1/11;
   //
   xBrush3 = appWidth*6.7/8;
   yBrush3 = appHeight*4.6/20;
@@ -360,6 +360,8 @@ void moreButtons() {
 }
 
 void moreButtonDraw () {
+  if (buttonON==true) {
+  
  fill(#FFFFFF);
   rect(xBrushType1, yBrushType1, widthBrushType1, heightBrushType1);
   rect(xBrushType2, yBrushType2, widthBrushType2, heightBrushType2);
@@ -461,4 +463,8 @@ void moreButtonDraw () {
   fill(shade5);
   rect(xShade5, yShade5, widthShade5, heightShade5);
   //
+  fill(#000000);
+  ellipse (xBrush2, yBrush2, diatmeterBrush2, diatmeterBrush2);
+  rect(xBrush3, yBrush3, widthBrush3, heightBrush3); 
+}
 }
