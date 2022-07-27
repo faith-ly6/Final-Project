@@ -178,6 +178,12 @@ void musicButtons () {
   if (heightLoopLarger == true) loopWidthRatio = loopLargerDimension / loopLargerDimension;
   if (heightLoopLarger == true) loopHeightRatio = loopSmallerDimension / loopLargerDimension; 
   //
+  //
+  xPButton = appWidth*3.23/4;
+  yPButton = appHeight*17/20;
+  widthPButton = appWidth*.65/20;
+  heightPButton = appHeight*1.1/20;
+  //
   xPlay = appWidth*3.2/4;
   yPlay = appHeight*17/20;
   widthPlay = appWidth*1/20; 
@@ -213,4 +219,18 @@ void musicButtons () {
   widthLoop = appWidth*.75/20; 
   heightLoop = appHeight*1/20;
   //
+}
+void musicButtonsDraw () {
+  //
+  stroke (#C1C1C1);
+  fill (#C1C1C1);
+  rect (xPButton, yPButton, widthPButton, heightPButton);
+  stroke (#000000);
+  if (pauseON==true) image (play, xPlay, yPlay, widthPlay, heightPlay);
+  if (pauseON==false) image ( pause, xPause, yPause, widthPause, heightPause);
+  image ( rewind, xRewind, yRewind, widthRewind, heightRewind);
+  image ( forward, xForward, yForward, widthForward, heightForward);
+  image ( next, xNext, yNext, widthNext, heightNext);
+  image ( last, xLast, yLast, widthLast, heightLast);
+  image ( loop, xLoop, yLoop, widthLoop, heightLoop);
 }

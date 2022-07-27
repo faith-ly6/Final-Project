@@ -74,7 +74,7 @@ float xShade4, yShade4, widthShade4, heightShade4;
 float xShade5, yShade5, widthShade5, heightShade5;
 //
  
-void moreButtons() {
+void brushButtons() {
    size(900,700);//Landscape (Portrait or Sqaure)
   println (width, height, displayWidth, displayHeight);
   int appWidth = width;
@@ -359,7 +359,7 @@ void moreButtons() {
   //
 }
 
-void moreButtonDraw () {
+void brushButtonDraw () {
   if (buttonON==true) {
   
  fill(#FFFFFF);
@@ -467,4 +467,64 @@ void moreButtonDraw () {
   ellipse (xBrush2, yBrush2, diatmeterBrush2, diatmeterBrush2);
   rect(xBrush3, yBrush3, widthBrush3, heightBrush3); 
 }
+}
+void brushButtonsMouse () {
+  if (mouseX>= xBrushType1 && mouseX<=xBrushType1+widthBrushType1 && mouseY>= yBrushType1 && mouseY<=yBrushType1+heightBrushType1 ) {lineON=true; ellipseON=false; rectON=false;}
+  if (mouseX>= xBrushType2 && mouseX<=xBrushType2+widthBrushType2 && mouseY>= yBrushType2 && mouseY<=yBrushType2+heightBrushType2 ) {lineON=false; ellipseON=true; rectON=false;}
+  if (mouseX>= xBrushType3 && mouseX<=xBrushType3+widthBrushType3 && mouseY>= yBrushType3 && mouseY<=yBrushType3+heightBrushType3 ) {lineON=false; ellipseON=false; rectON=true;}
+  if (mouseX>=xXS && mouseX<=xXS+widthXS && mouseY>=yXS && mouseY<= yXS +heightXS) {lineWeight= 1;}
+  if (mouseX>=xS && mouseX<=xS+widthS && mouseY>=yS && mouseY<= yS +heightS) {lineWeight= 5;}
+  if (mouseX>=xM && mouseX<=xM+widthM && mouseY>=yM && mouseY<= yM +heightM){lineWeight= 10;}
+  if (mouseX>=xL && mouseX<=xL+widthL && mouseY>=yL && mouseY<= yL +heightL) {lineWeight= 20;}
+  if (mouseX>=xXL && mouseX<=xXL+widthXL && mouseY>=yXL && mouseY<= yXL +heightXL) {lineWeight= 30;}
+  //
+  if (mouseX>= xRed1 && mouseX<= xRed1 + widthRed1 && mouseY>= yRed1 && mouseY<= yRed1 + heightRed1) {lineStroke= red1; lineFill= red1;}
+  if (mouseX>= xRed2 && mouseX<= xRed2 + widthRed2 && mouseY>= yRed2 && mouseY<= yRed2 + heightRed2) {lineStroke= red2; lineFill= red2;}
+  if (mouseX>= xRed3 && mouseX<= xRed3 + widthRed3 && mouseY>= yRed3 && mouseY<= yRed3 + heightRed3) {lineStroke= red3; lineFill= red3;}
+  if (mouseX>= xRed4 && mouseX<= xRed4 + widthRed4 && mouseY>= yRed4 && mouseY<= yRed4 + heightRed4) {lineStroke= red4; lineFill= red4;}
+  if (mouseX>= xRed5 && mouseX<= xRed5 + widthRed5 && mouseY>= yRed5 && mouseY<= yRed5 + heightRed5) {lineStroke= red5; lineFill= red5;}
+  
+  if (mouseX>= xOrange1 && mouseX<= xOrange1 + widthOrange1 && mouseY>= yOrange1 && mouseY<= yOrange1 + heightOrange1) {lineStroke=orange1; lineFill=orange1;}
+  if (mouseX>= xOrange2 && mouseX<= xOrange2 + widthOrange2 && mouseY>= yOrange2 && mouseY<= yOrange2 + heightOrange2) {lineStroke=orange2; lineFill=orange2;} 
+  if (mouseX>= xOrange3 && mouseX<= xOrange3 + widthOrange3 && mouseY>= yOrange3 && mouseY<= yOrange3 + heightOrange3) {lineStroke=orange3; lineFill=orange3;}
+  if (mouseX>= xOrange4 && mouseX<= xOrange4 + widthOrange4 && mouseY>= yOrange4 && mouseY<= yOrange4 + heightOrange4) {lineStroke=orange4; lineFill=orange4;}
+  if (mouseX>= xOrange5 && mouseX<= xOrange5 + widthOrange5 && mouseY>= yOrange5 && mouseY<= yOrange5 + heightOrange5) {lineStroke=orange5; lineFill=orange5;}
+  
+  if (mouseX>= xYellow1 && mouseX<= xYellow1 + widthYellow1 && mouseY>= yYellow1 && mouseY<= yYellow1 + heightYellow1) {lineStroke=yellow1; lineFill=yellow1;}
+  if (mouseX>= xYellow2 && mouseX<= xYellow2 + widthYellow2 && mouseY>= yYellow2 && mouseY<= yYellow2 + heightYellow2) {lineStroke=yellow2; lineFill=yellow2;}
+  if (mouseX>= xYellow3 && mouseX<= xYellow3 + widthYellow3 && mouseY>= yYellow3 && mouseY<= yYellow3 + heightYellow3) {lineStroke=yellow3; lineFill=yellow3;}
+  if (mouseX>= xYellow4 && mouseX<= xYellow4 + widthYellow4 && mouseY>= yYellow4 && mouseY<= yYellow4 + heightYellow4) {lineStroke=yellow4; lineFill=yellow4;}
+  if (mouseX>= xYellow5 && mouseX<= xYellow5 + widthYellow5 && mouseY>= yYellow5 && mouseY<= yYellow5 + heightYellow5) {lineStroke=yellow5; lineFill=yellow5;}
+  
+  if (mouseX>= xGreen1 && mouseX<= xGreen1 + widthGreen1 && mouseY>= yGreen1 && mouseY<= yGreen1 + heightGreen1) {lineStroke=green1; lineFill=green1;}
+  if (mouseX>= xGreen2 && mouseX<= xGreen2 + widthGreen2 && mouseY>= yGreen2 && mouseY<= yGreen2 + heightGreen2) {lineStroke=green2; lineFill=green2;}
+  if (mouseX>= xGreen3 && mouseX<= xGreen3 + widthGreen3 && mouseY>= yGreen3 && mouseY<= yGreen3 + heightGreen3) {lineStroke=green3; lineFill=green3;}
+  if (mouseX>= xGreen4 && mouseX<= xGreen4 + widthGreen4 && mouseY>= yGreen4 && mouseY<= yGreen4 + heightGreen4) {lineStroke=green4; lineFill=green4;}
+  if (mouseX>= xGreen5 && mouseX<= xGreen5 + widthGreen5 && mouseY>= yGreen5 && mouseY<= yGreen5 + heightGreen5) {lineStroke=green5; lineFill=green5;}
+  
+  if (mouseX>= xBlue1 && mouseX<= xBlue1 + widthBlue1 && mouseY>= yBlue1 && mouseY<= yBlue1 + heightBlue1) {lineStroke=blue1; lineFill=blue1;}
+  if (mouseX>= xBlue2 && mouseX<= xBlue2 + widthBlue2 && mouseY>= yBlue2 && mouseY<= yBlue2 + heightBlue2) {lineStroke=blue2; lineFill=blue2;}
+  if (mouseX>= xBlue3 && mouseX<= xBlue3 + widthBlue3 && mouseY>= yBlue3 && mouseY<= yBlue3 + heightBlue3) {lineStroke=blue3; lineFill=blue3;}
+  if (mouseX>= xBlue4 && mouseX<= xBlue4 + widthBlue4 && mouseY>= yBlue4 && mouseY<= yBlue4 + heightBlue4) {lineStroke=blue4; lineFill=blue4;}
+  if (mouseX>= xBlue5 && mouseX<= xBlue5 + widthBlue5 && mouseY>= yBlue5 && mouseY<= yBlue5 + heightBlue5) {lineStroke=blue5; lineFill=blue5;}
+  
+  if (mouseX>= xPurple1 && mouseX<= xPurple1 + widthPurple1 && mouseY>= yPurple1 && mouseY<= yPurple1 + heightPurple1) {lineStroke=purple1; lineFill=purple1;}
+  if (mouseX>= xPurple2 && mouseX<= xPurple2 + widthPurple2 && mouseY>= yPurple2 && mouseY<= yPurple2 + heightPurple2) {lineStroke=purple2; lineFill=purple2;}
+  if (mouseX>= xPurple3 && mouseX<= xPurple3 + widthPurple3 && mouseY>= yPurple3 && mouseY<= yPurple3 + heightPurple3) {lineStroke=purple3; lineFill=purple3;}
+  if (mouseX>= xPurple4 && mouseX<= xPurple4 + widthPurple4 && mouseY>= yPurple4 && mouseY<= yPurple4 + heightPurple4) {lineStroke=purple4; lineFill=purple4;}
+  if (mouseX>= xPurple5 && mouseX<= xPurple5 + widthPurple5 && mouseY>= yPurple5 && mouseY<= yPurple5 + heightPurple5) {lineStroke=purple5; lineFill=purple5;}
+  
+  if (mouseX>= xBrown1 && mouseX<= xBrown1 + widthBrown1 && mouseY>= yBrown1 && mouseY<= yBrown1 + heightBrown1) {lineStroke=brown1; lineFill=brown1;}
+  if (mouseX>= xBrown2 && mouseX<= xBrown2 + widthBrown2 && mouseY>= yBrown2 && mouseY<= yBrown2 + heightBrown2) {lineStroke=brown2; lineFill=brown2;}
+  if (mouseX>= xBrown3 && mouseX<= xBrown3 + widthBrown3 && mouseY>= yBrown3 && mouseY<= yBrown3 + heightBrown3) {lineStroke=brown3; lineFill=brown3;}
+  if (mouseX>= xBrown4 && mouseX<= xBrown4 + widthBrown4 && mouseY>= yBrown4 && mouseY<= yBrown4 + heightBrown4) {lineStroke=brown4; lineFill=brown4;}
+  if (mouseX>= xBrown5 && mouseX<= xBrown5 + widthBrown5 && mouseY>= yBrown5 && mouseY<= yBrown5 + heightBrown5) {lineStroke=brown5; lineFill=brown5;}
+  
+  if (mouseX>= xShade1 && mouseX<= xShade1 + widthShade1 && mouseY>= yShade1 && mouseY<= yShade1 + heightShade1) {lineStroke=shade1; lineFill=shade1;}
+  if (mouseX>= xShade2 && mouseX<= xShade2 + widthShade2 && mouseY>= yShade2 && mouseY<= yShade2 + heightShade2) {lineStroke=shade2; lineFill=shade2;}
+  if (mouseX>= xShade3 && mouseX<= xShade3 + widthShade3 && mouseY>= yShade3 && mouseY<= yShade3 + heightShade3) {lineStroke=shade3; lineFill=shade3;}
+  if (mouseX>= xShade4 && mouseX<= xShade4 + widthShade4 && mouseY>= yShade4 && mouseY<= yShade4 + heightShade4) {lineStroke=shade4; lineFill=shade4;}
+  if (mouseX>= xShade5 && mouseX<= xShade5 + widthShade5 && mouseY>= yShade5 && mouseY<= yShade5 + heightShade5) {lineStroke=shade5; lineFill=shade5;}
+  
+  if (mouseX>=xEraser && mouseX<=xEraser+widthEraser && mouseY>=yEraser && mouseY<=yEraser+heightEraser) {if(eraserON==false) {eraserON=true;} else {eraserON=false;}}
 }
