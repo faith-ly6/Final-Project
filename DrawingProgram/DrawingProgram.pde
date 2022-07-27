@@ -33,7 +33,10 @@ PFont buttonFont;
 //
 
 //
-boolean draw = false, lineON=true, ellipseON=false, rectON=false, eraserON=false, playON=false, pauseON=true, temp1ON=false, temp2ON=false, temp3ON=false, buttonON=true, pButtonON=false, tButtonON=false;
+Boolean draw = false, lineON=true, ellipseON=false, rectON=false, eraserON=false; 
+Boolean playON=false, pauseON=true; 
+Boolean temp1ON=false, temp2ON=false, temp3ON=false;
+Boolean buttonON=true, pButtonON=false, tButtonON=false;
 //
 void setup () {
   //Display Checker
