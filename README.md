@@ -16,7 +16,6 @@ To Do List
 - [x] Change Brush
 
 - [ ] ~~Colour picker/wheel~~
-
 - [ ] ~~Shape picker/printer~~
-- [ ] Image uploader
-- [ ] File saver
+- [ ] ~~Image uploader~~
+- [ ] ~~File saver~~
