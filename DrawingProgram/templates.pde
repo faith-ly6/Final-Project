@@ -141,7 +141,7 @@ void templatesDraw () {
   image(temp2, xTemp2, yTemp2, widthTemp2, heightTemp2);
   image(temp3, xTemp3, yTemp3, widthTemp3, heightTemp3);
   }
-  if (temp1ON==true) image(temp1, xTemp1C, yTemp1C, widthTemp1C, heightTemp1C);
-  if (temp2ON==true) image(temp2, xTemp2C, yTemp2C, widthTemp2C, heightTemp2C);
-  if (temp3ON==true) image(temp3, xTemp3C, yTemp3C, widthTemp3C, heightTemp3C);
+  if (temp1ON==true) {image(temp1, xTemp1C, yTemp1C, widthTemp1C, heightTemp1C); image1=false;}
+  if (temp2ON==true) {image(temp2, xTemp2C, yTemp2C, widthTemp2C, heightTemp2C); image2=false;}
+  if (temp3ON==true) {image(temp3, xTemp3C, yTemp3C, widthTemp3C, heightTemp3C); image3=false;}
 }

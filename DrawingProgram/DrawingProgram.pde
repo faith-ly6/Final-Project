@@ -36,7 +36,7 @@ color quitFill=#FFFFFF, eraserFill=#FFFFFF;
 color brushButtonFill=#C1C1C1, canvasButtonFill=#C1C1C1, tempButtonFill=#C1C1C1;
 color canvasF2=#DEBD7B, canvasF1=#FFFFFF, canvasF3=#000000, canvasFill;
 color xSButtonFill, sButtonFill, mButtonFill, lButtonFill, xLButtonFill, noPageFill= #C1C1C1;
-color type1Fill, type2Fill, type3Fill;
+color type1Fill=#FFFFFF, type2Fill=#FFFFFF, type3Fill=#FFFFFF;
 //
 PImage temp1, temp2, temp3;
 PFont buttonFont;
@@ -110,11 +110,7 @@ void setup () {
   widthBrushButton = appWidth*1/10;
   heightBrushButton = appHeight*4.75/6;
   //
-  xBrushMenu = appWidth*5/8;
-  yBrushMenu = appHeight*0/20; 
-  widthBrushMenu = appWidth*1.65/6;
-  heightBrushMenu = appHeight*4.75/6;
-  //
+  
 
   xBrushType1 = appWidth*5/8;
   yBrushType1 = appHeight*4/20;
@@ -375,6 +371,7 @@ void setup () {
   widthShade5 = appWidth*(1.65/5)/6;
   heightShade5 = appHeight*1/20;
   //
+
   widthDrawingSurface = appWidth*2.5/4; 
   heightDrawingSurface = appHeight*1;
   diameterDrawing = appWidth*1/100;
@@ -385,6 +382,10 @@ void setup () {
   //
   widthDrawingSurface1 = appWidth*2.5/4; 
   heightDrawingSurface1 = appHeight*1;
+  widthDrawingSurface2 = appWidth*2.5/4; 
+  heightDrawingSurface2 = appHeight*1;
+  widthDrawingSurface3 = appWidth*2.5/4; 
+  heightDrawingSurface3 = appHeight*1;
   //
   xMusicMenu = appWidth*5/8;
   yMusicMenu = appHeight*4.75/6;
@@ -471,7 +472,11 @@ void setup () {
   widthLoop = appWidth*.75/20; 
   heightLoop = appHeight*1/20;
   //
-  
+  xBrushMenu = appWidth*5/8;
+  yBrushMenu = appHeight*0/20; 
+  widthBrushMenu = appWidth*1.65/6;
+  heightBrushMenu = appHeight*4.75/6;
+  //
   rect(xDrawingSurface, yDrawingSurface, widthDrawingSurface, heightDrawingSurface);
 
   musicButtons();
@@ -494,10 +499,12 @@ void draw () {
     rect(xDrawingSurface1, yDrawingSurface1, widthDrawingSurface1, heightDrawingSurface1); 
     image1=false;
   }
+  
   if (temp2ON==true && image2==true) {
     rect(xDrawingSurface2, yDrawingSurface2, widthDrawingSurface2, heightDrawingSurface2); 
     image2=false;
   }
+  
   if (temp3ON==true && image3==true) {
     rect(xDrawingSurface3, yDrawingSurface3, widthDrawingSurface3, heightDrawingSurface3); 
     image3=false;
@@ -604,7 +611,6 @@ void mousePressed () {
     temp3ON=false;
     image3=false;
     drawingON=true;
-    canvasFill1=true;
   }
   if (mouseX>= xTemp1&& mouseX<= xTemp1+ widthTemp1&& mouseY>= yTemp1 && mouseY<= yTemp1+ heightTemp1) {
     if (temp1ON==false) {
@@ -615,8 +621,7 @@ void mousePressed () {
       temp3ON=false;
       image3=false;
       drawingON=false;
-      surfaceBrown=false;
-      surfaceBlack=false;
+      
     }
   } 
   if (mouseX>= xTemp2&& mouseX<= xTemp2+ widthTemp2&& mouseY>= yTemp2 && mouseY<= yTemp2+ heightTemp2) {
@@ -628,8 +633,7 @@ void mousePressed () {
       temp3ON=false;
       image3=false;
       drawingON=false;
-      surfaceBrown=false;
-      surfaceBlack=false;
+     
     }
   } 
   if (mouseX>= xTemp3&& mouseX<= xTemp3+ widthTemp3&& mouseY>= yTemp3 && mouseY<= yTemp3+ heightTemp3) {
@@ -641,13 +645,11 @@ void mousePressed () {
       temp3ON=true;
       image3=true;
       drawingON=false;
-      surfaceBrown=false;
-      surfaceBlack=false;
+   
     }
   } 
   mouseMusic ();
-  if (mouseX>= xBrushType1 && mouseX<=xBrushType1+widthBrushType1 && mouseY>= yBrushType1 && mouseY<=yBrushType1+heightBrushType1 ) {
-
+  
   if (mouseX>=xBrushButton && mouseX<= xBrushButton+ widthBrushButton&& mouseY>= yBrushButton && mouseY<= yBrushButton + heightBrushButton ) {
     if (buttonON==false) {
       buttonON=true;
@@ -698,6 +700,7 @@ void mousePressed () {
       draw=true;
     }
   }
+  
   //
 }//End mousePressed
 //
