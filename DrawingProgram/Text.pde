@@ -4,7 +4,7 @@ String paperButtonText="Canvas";
 String brush1Text="/";
 String quitText="X";
 String xSText="XS", sText="S", mText="M", lText="L", xLText="XL";
-String canvasText1 = "#FFFFFF", canvasText2 = "#DEBD7B", canvasText3 = "#000000";
+String canvasText1 = "#FFFFFF (double click)", canvasText2 = "#DEBD7B (double click)", canvasText3 = "#000000 (double click)";
 String songTitle="Glass - Anno Domini Beats";
 String template="Pages";
 String noPages="Clear";

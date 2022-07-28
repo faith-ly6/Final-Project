@@ -393,12 +393,12 @@ void setup () {
   heightMusicMenu = appHeight*1.25/6;
   //
   xtempButton = appWidth*7.2/8;
-  ytempButton = appHeight*0/20;
+  ytempButton = appHeight*1/20;
   widthTempButton = appWidth*1/10;
   heightTempButton = appHeight*1/20;
   //
   xNoPage = appWidth*7.2/8;
-  yNoPage = appHeight*1/20;
+  yNoPage = appHeight*0/20;
   widthNoPage = appWidth*1/10;
   heightNoPage = appHeight*1/20;
   //
