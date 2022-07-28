@@ -587,7 +587,7 @@ void draw () {
   }
   //End Hover-Over
 
-  if (eraserON==true) {
+   if (eraserON==true) {
     eraserFill=#B4B0A0;
     lineFill=#FFFFFF;
     lineStroke=#FFFFFF;
@@ -596,6 +596,25 @@ void draw () {
     lineFill=#000000;
     lineStroke=#000000;
   }
+  } /*else {if(surfaceBrown==true) {
+    eraserFill=#B4B0A0;
+    lineFill=canvasFill2;
+    lineStroke=canvasFill2;
+  } else {
+    eraserFill=#FFFFFF;
+    lineFill=#000000;
+    lineStroke=#000000;
+  } 
+  } else {if (surfaceBlack==true) {
+    eraserFill=#B4B0A0;
+    lineFill=canvasFill3;
+    lineStroke=canvasFill3;
+  } else {
+    eraserFill=#FFFFFF;
+    lineFill=#FFFFFF;
+    lineStroke=#FFFFFF;}
+  }
+  */
   //
   texts();
   //

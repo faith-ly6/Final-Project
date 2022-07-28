@@ -72,7 +72,15 @@ float xShade2, yShade2, widthShade2, heightShade2;
 float xShade3, yShade3, widthShade3, heightShade3;
 float xShade4, yShade4, widthShade4, heightShade4;
 float xShade5, yShade5, widthShade5, heightShade5;
-Boolean red12=false;
+Boolean r1=false, r2=false, r3=false, r4=false, r5=false;
+Boolean o1=false, o2=false, o3=false, o4=false, o5=false;
+Boolean y1=false, y2=false, y3=false, y4=false, y5=false;
+Boolean g1=false, g2=false, g3=false, g4=false, g5=false;
+Boolean b1=false, b2=false, b3=false, b4=false, b5=false;
+Boolean p1=false, p2=false, p3=false, p4=false, p5=false;
+Boolean br1=false, br2=false, br3=false, br4=false, br5=false;
+Boolean s1=false, s2=false, s3=false, s4=false, s5=false;
+
 //
 
 //
@@ -214,10 +222,6 @@ void brushButtonDraw () {
   } else {
     xLButtonFill= #FFFFFF;
   }
-  if (red12==true){
-    lineStroke= #FF0307; 
-    lineFill= #FF0307;
-  }
   }
 }
 void brushButtonsMouse () {
@@ -237,7 +241,7 @@ void brushButtonsMouse () {
     rectON=true;
   }
   if (mouseX>=xXS && mouseX<=xXS+widthXS && mouseY>=yXS && mouseY<= yXS +heightXS) {
-    lineWeight= 1;
+    lineWeight= 0;
   }
   if (mouseX>=xS && mouseX<=xS+widthS && mouseY>=yS && mouseY<= yS +heightS) {
     lineWeight= 5;
@@ -255,171 +259,411 @@ void brushButtonsMouse () {
   }
   //
   if (mouseX>= xRed1 && mouseX<= xRed1 + widthRed1 && mouseY>= yRed1 && mouseY<= yRed1 + heightRed1) {
-    red12=true;
-    
+    r1=true; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xRed2 && mouseX<= xRed2 + widthRed2 && mouseY>= yRed2 && mouseY<= yRed2 + heightRed2) {
-    lineStroke= #FF3134; 
-    lineFill= #FF3134;
+    r1=false; r2=true; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xRed3 && mouseX<= xRed3 + widthRed3 && mouseY>= yRed3 && mouseY<= yRed3 + heightRed3) {
-    lineStroke= #FF6467; 
-    lineFill= #FF6467;
+    r1=false; r2=false; r3=true; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xRed4 && mouseX<= xRed4 + widthRed4 && mouseY>= yRed4 && mouseY<= yRed4 + heightRed4) {
-    lineStroke= #FFA7A9; 
-    lineFill= #FFA7A9;
+    r1=false; r2=false; r3=false; r4=true; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xRed5 && mouseX<= xRed5 + widthRed5 && mouseY>= yRed5 && mouseY<= yRed5 + heightRed5) {
-    lineStroke= #FFDBDC; 
-    lineFill= #FFDBDC;
+    r1=false; r2=false; r3=false; r4=false; r5=true;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
 
   if (mouseX>= xOrange1 && mouseX<= xOrange1 + widthOrange1 && mouseY>= yOrange1 && mouseY<= yOrange1 + heightOrange1) {
-    lineStroke=#FF9100; 
-    lineFill=#FF9100;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=true; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xOrange2 && mouseX<= xOrange2 + widthOrange2 && mouseY>= yOrange2 && mouseY<= yOrange2 + heightOrange2) {
-    lineStroke=#FFA42C; 
-    lineFill=#FFA42C;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=true; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   } 
   if (mouseX>= xOrange3 && mouseX<= xOrange3 + widthOrange3 && mouseY>= yOrange3 && mouseY<= yOrange3 + heightOrange3) {
-    lineStroke=#FFB95D; 
-    lineFill=#FFB95D;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=true; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xOrange4 && mouseX<= xOrange4 + widthOrange4 && mouseY>= yOrange4 && mouseY<= yOrange4 + heightOrange4) {
-    lineStroke=#FFC981; 
-    lineFill=#FFC981;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=true; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xOrange5 && mouseX<= xOrange5 + widthOrange5 && mouseY>= yOrange5 && mouseY<= yOrange5 + heightOrange5) {
-    lineStroke=#FFDEB2; 
-    lineFill=#FFDEB2;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=true;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
 
   if (mouseX>= xYellow1 && mouseX<= xYellow1 + widthYellow1 && mouseY>= yYellow1 && mouseY<= yYellow1 + heightYellow1) {
-    lineStroke=#FFF300; 
-    lineFill=#FFF300;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=true; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xYellow2 && mouseX<= xYellow2 + widthYellow2 && mouseY>= yYellow2 && mouseY<= yYellow2 + heightYellow2) {
-    lineStroke=#FFF52E; 
-    lineFill=#FFF52E;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=true; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xYellow3 && mouseX<= xYellow3 + widthYellow3 && mouseY>= yYellow3 && mouseY<= yYellow3 + heightYellow3) {
-    lineStroke=#FFF862; 
-    lineFill=#FFF862;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=true; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xYellow4 && mouseX<= xYellow4 + widthYellow4 && mouseY>= yYellow4 && mouseY<= yYellow4 + heightYellow4) {
-    lineStroke=#FFFA95; 
-    lineFill=#FFFA95;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=true; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xYellow5 && mouseX<= xYellow5 + widthYellow5 && mouseY>= yYellow5 && mouseY<= yYellow5 + heightYellow5) {
-    lineStroke=#FFFCC4; 
-    lineFill=#FFFCC4;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=true;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
 
   if (mouseX>= xGreen1 && mouseX<= xGreen1 + widthGreen1 && mouseY>= yGreen1 && mouseY<= yGreen1 + heightGreen1) {
-    lineStroke=#0BFF00; 
-    lineFill=#0BFF00;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=true; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xGreen2 && mouseX<= xGreen2 + widthGreen2 && mouseY>= yGreen2 && mouseY<= yGreen2 + heightGreen2) {
-    lineStroke=#3DFF34; 
-    lineFill=#3DFF34;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=true; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xGreen3 && mouseX<= xGreen3 + widthGreen3 && mouseY>= yGreen3 && mouseY<= yGreen3 + heightGreen3) {
-    lineStroke=#6BFF64; 
-    lineFill=#6BFF64;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=true; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xGreen4 && mouseX<= xGreen4 + widthGreen4 && mouseY>= yGreen4 && mouseY<= yGreen4 + heightGreen4) {
-    lineStroke=#93FF8E; 
-    lineFill=#93FF8E;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=true; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xGreen5 && mouseX<= xGreen5 + widthGreen5 && mouseY>= yGreen5 && mouseY<= yGreen5 + heightGreen5) {
-    lineStroke=#BFFFBC; 
-    lineFill=#BFFFBC;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=true;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
 
   if (mouseX>= xBlue1 && mouseX<= xBlue1 + widthBlue1 && mouseY>= yBlue1 && mouseY<= yBlue1 + heightBlue1) {
-    lineStroke=#000AFF; 
-    lineFill=#000AFF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=true; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xBlue2 && mouseX<= xBlue2 + widthBlue2 && mouseY>= yBlue2 && mouseY<= yBlue2 + heightBlue2) {
-    lineStroke=#434AFF; 
-    lineFill=#434AFF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=true; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xBlue3 && mouseX<= xBlue3 + widthBlue3 && mouseY>= yBlue3 && mouseY<= yBlue3 + heightBlue3) {
-    lineStroke=#6A6FFF; 
-    lineFill=#6A6FFF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=true; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xBlue4 && mouseX<= xBlue4 + widthBlue4 && mouseY>= yBlue4 && mouseY<= yBlue4 + heightBlue4) {
-    lineStroke=#9397FF; 
-    lineFill=#9397FF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=true; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xBlue5 && mouseX<= xBlue5 + widthBlue5 && mouseY>= yBlue5 && mouseY<= yBlue5 + heightBlue5) {
-    lineStroke=#BFC1FF; 
-    lineFill=#BFC1FF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=true;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
 
   if (mouseX>= xPurple1 && mouseX<= xPurple1 + widthPurple1 && mouseY>= yPurple1 && mouseY<= yPurple1 + heightPurple1) {
-    lineStroke=#A900FF; 
-    lineFill=#A900FF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=true; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xPurple2 && mouseX<= xPurple2 + widthPurple2 && mouseY>= yPurple2 && mouseY<= yPurple2 + heightPurple2) {
-    lineStroke=#C424FF; 
-    lineFill=#C424FF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=true; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xPurple3 && mouseX<= xPurple3 + widthPurple3 && mouseY>= yPurple3 && mouseY<= yPurple3 + heightPurple3) {
-    lineStroke=#CC67FF; 
-    lineFill=#CC67FF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=true; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xPurple4 && mouseX<= xPurple4 + widthPurple4 && mouseY>= yPurple4 && mouseY<= yPurple4 + heightPurple4) {
-    lineStroke=#DC98FF; 
-    lineFill=#DC98FF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=true; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xPurple5 && mouseX<= xPurple5 + widthPurple5 && mouseY>= yPurple5 && mouseY<= yPurple5 + heightPurple5) {
-    lineStroke=#E9BFFF; 
-    lineFill=#E9BFFF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=true;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
 
   if (mouseX>= xBrown1 && mouseX<= xBrown1 + widthBrown1 && mouseY>= yBrown1 && mouseY<= yBrown1 + heightBrown1) {
-    lineStroke=#674300; 
-    lineFill=#674300;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=true; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xBrown2 && mouseX<= xBrown2 + widthBrown2 && mouseY>= yBrown2 && mouseY<= yBrown2 + heightBrown2) {
-    lineStroke=#715218; 
-    lineFill=#715218;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=true; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xBrown3 && mouseX<= xBrown3 + widthBrown3 && mouseY>= yBrown3 && mouseY<= yBrown3 + heightBrown3) {
-    lineStroke=#89682C; 
-    lineFill=#89682C;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=true; br4=false; br5=false;
   }
   if (mouseX>= xBrown4 && mouseX<= xBrown4 + widthBrown4 && mouseY>= yBrown4 && mouseY<= yBrown4 + heightBrown4) {
-    lineStroke=#A08147; 
-    lineFill=#A08147;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=true; br5=false;
   }
   if (mouseX>= xBrown5 && mouseX<= xBrown5 + widthBrown5 && mouseY>= yBrown5 && mouseY<= yBrown5 + heightBrown5) {
-    lineStroke=#BC9D63; 
-    lineFill=#BC9D63;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=true;
   }
 
   if (mouseX>= xShade1 && mouseX<= xShade1 + widthShade1 && mouseY>= yShade1 && mouseY<= yShade1 + heightShade1) {
-    lineStroke=#000000; 
-    lineFill=#000000;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=true; s2=false; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xShade2 && mouseX<= xShade2 + widthShade2 && mouseY>= yShade2 && mouseY<= yShade2 + heightShade2) {
-    lineStroke=#272626; 
-    lineFill=#272626;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=true; s3=false; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xShade3 && mouseX<= xShade3 + widthShade3 && mouseY>= yShade3 && mouseY<= yShade3 + heightShade3) {
-    lineStroke=#50504F; 
-    lineFill=#50504F;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=true; s4=false; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xShade4 && mouseX<= xShade4 + widthShade4 && mouseY>= yShade4 && mouseY<= yShade4 + heightShade4) {
-    lineStroke=#B2B2B2; 
-    lineFill=#B2B2B2;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=true; s5=false;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
   if (mouseX>= xShade5 && mouseX<= xShade5 + widthShade5 && mouseY>= yShade5 && mouseY<= yShade5 + heightShade5) {
-    lineStroke=#FFFFFF; 
-    lineFill=#FFFFFF;
+    r1=false; r2=false; r3=false; r4=false; r5=false;
+    o1=false; o2=false; o3=false; o4=false; o5=false;
+    y1=false; y2=false; y3=false; y4=false; y5=false;
+    g1=false; g2=false; g3=false; g4=false; g5=false;
+    b1=false; b2=false; b3=false; b4=false; b5=false;
+    p1=false; p2=false; p3=false; p4=false; p5=false;    
+    s1=false; s2=false; s3=false; s4=false; s5=true;
+    br1=false; br2=false; br3=false; br4=false; br5=false;
   }
 
   if (mouseX>=xEraser && mouseX<=xEraser+widthEraser && mouseY>=yEraser && mouseY<=yEraser+heightEraser) {
