@@ -96,3 +96,4 @@ fill(0,0,0);
   text (songTitle, xMusicMenu, yMusicMenu, widthMusicMenu, heightMusicMenu);
   fill (#FFFFFF);
 }
+ 

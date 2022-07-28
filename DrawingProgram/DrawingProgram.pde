@@ -34,8 +34,9 @@ color  lineFill=#D33C3C, lineStroke=#D33C3C;
 //
 color quitFill=#FFFFFF, eraserFill=#FFFFFF;
 color brushButtonFill=#C1C1C1, canvasButtonFill=#C1C1C1, tempButtonFill=#C1C1C1;
-color canvasFill2=#DEBD7B, canvasFill1=#FFFFFF, canvasFill3=#000000, canvasFill=#FFFFFF;
+color canvasF2=#DEBD7B, canvasF1=#FFFFFF, canvasF3=#000000, canvasFill;
 color xSButtonFill, sButtonFill, mButtonFill, lButtonFill, xLButtonFill, noPageFill= #C1C1C1;
+color type1Fill, type2Fill, type3Fill;
 //
 PImage temp1, temp2, temp3;
 PFont buttonFont;
@@ -48,7 +49,7 @@ Boolean temp1ON=false, temp2ON=false, temp3ON=false;
 Boolean buttonON=false, pButtonON=false, tButtonON=false, drawingON=false;
 Boolean image1=false, image2=false, image3=false;
 Boolean surfaceBrown=false, surfaceBlack=false;
-//Boolean canvasFill1=true, canvasFill2=false, canvasFill3=false;
+Boolean canvasFill1=true, canvasFill2=false, canvasFill3=false;
 //
 void setup () {
   //Display Checker
@@ -384,14 +385,6 @@ void setup () {
   //
   widthDrawingSurface1 = appWidth*2.5/4; 
   heightDrawingSurface1 = appHeight*1;
-  widthDrawingSurface2 = appWidth*2.5/4; 
-  heightDrawingSurface2 = appHeight*1;
-  widthDrawingSurface3 = appWidth*2.5/4; 
-  heightDrawingSurface3 = appHeight*1;
-  widthDrawingSurfaceBr = appWidth*2.5/4; 
-  heightDrawingSurfaceBr = appHeight*1;
-  widthDrawingSurfaceB = appWidth*2.5/4; 
-  heightDrawingSurfaceB = appHeight*1;
   //
   xMusicMenu = appWidth*5/8;
   yMusicMenu = appHeight*4.75/6;
@@ -478,7 +471,7 @@ void setup () {
   widthLoop = appWidth*.75/20; 
   heightLoop = appHeight*1/20;
   //
-  fill(canvasFill);
+  
   rect(xDrawingSurface, yDrawingSurface, widthDrawingSurface, heightDrawingSurface);
 
   musicButtons();
@@ -492,7 +485,11 @@ void setup () {
 }//End setup
 //
 void draw () {
-  fill(#FFFFFF);
+ 
+  fill (canvasFill);
+  if (canvasFill1==true) {canvasFill=canvasF1;}
+  if (canvasFill2==true) {canvasFill=canvasF2;}
+  if (canvasFill3==true) {canvasFill=canvasF3;}
   if (temp1ON==true && image1==true) {
     rect(xDrawingSurface1, yDrawingSurface1, widthDrawingSurface1, heightDrawingSurface1); 
     image1=false;
@@ -505,19 +502,10 @@ void draw () {
     rect(xDrawingSurface3, yDrawingSurface3, widthDrawingSurface3, heightDrawingSurface3); 
     image3=false;
   }
+  
   if (drawingON==true) {
     rect(xDrawingSurface, yDrawingSurface, widthDrawingSurface, heightDrawingSurface); 
     drawingON=false;
-  }
-  fill (canvasFill2);
-  if (surfaceBrown==true) {
-    rect(xDrawingSurfaceBr, yDrawingSurfaceBr, widthDrawingSurfaceBr, heightDrawingSurfaceBr); 
-    surfaceBrown=false;
-  }
-  fill(canvasFill3);
-  if (surfaceBlack==true) {
-  rect(xDrawingSurfaceB, yDrawingSurfaceB, widthDrawingSurfaceB, heightDrawingSurfaceB); 
-  surfaceBlack=false;
   }
   //
   drawingTool();
@@ -542,11 +530,11 @@ void draw () {
   rect (xMusicMenu, yMusicMenu, widthMusicMenu, heightMusicMenu);
   //
   if (pButtonON==true) {
-    fill(canvasFill1);
+    fill(canvasF1);
     rect (xCanvasFill1, yCanvasFill1, widthCanvasFill1, heightCanvasFill1);
     fill(#DEBD7B);
     rect (xCanvasFill2, yCanvasFill2, widthCanvasFill2, heightCanvasFill2);
-    fill(canvasFill3);
+    fill(canvasF3);
     rect (xCanvasFill3, yCanvasFill3, widthCanvasFill3, heightCanvasFill3);
   }
   //
@@ -589,32 +577,14 @@ void draw () {
 
    if (eraserON==true) {
     eraserFill=#B4B0A0;
-    lineFill=#FFFFFF;
-    lineStroke=#FFFFFF;
+    lineFill=canvasFill;
+    lineStroke=canvasFill;
   } else {
     eraserFill=#FFFFFF;
     lineFill=#000000;
     lineStroke=#000000;
   }
-  } /*else {if(surfaceBrown==true) {
-    eraserFill=#B4B0A0;
-    lineFill=canvasFill2;
-    lineStroke=canvasFill2;
-  } else {
-    eraserFill=#FFFFFF;
-    lineFill=#000000;
-    lineStroke=#000000;
-  } 
-  } else {if (surfaceBlack==true) {
-    eraserFill=#B4B0A0;
-    lineFill=canvasFill3;
-    lineStroke=canvasFill3;
-  } else {
-    eraserFill=#FFFFFF;
-    lineFill=#FFFFFF;
-    lineStroke=#FFFFFF;}
-  }
-  */
+ 
   //
   texts();
   //
@@ -634,7 +604,7 @@ void mousePressed () {
     temp3ON=false;
     image3=false;
     drawingON=true;
-    surfaceBrown=false;
+    canvasFill1=true;
   }
   if (mouseX>= xTemp1&& mouseX<= xTemp1+ widthTemp1&& mouseY>= yTemp1 && mouseY<= yTemp1+ heightTemp1) {
     if (temp1ON==false) {
@@ -676,6 +646,7 @@ void mousePressed () {
     }
   } 
   mouseMusic ();
+  if (mouseX>= xBrushType1 && mouseX<=xBrushType1+widthBrushType1 && mouseY>= yBrushType1 && mouseY<=yBrushType1+heightBrushType1 ) {
 
   if (mouseX>=xBrushButton && mouseX<= xBrushButton+ widthBrushButton&& mouseY>= yBrushButton && mouseY<= yBrushButton + heightBrushButton ) {
     if (buttonON==false) {
@@ -700,37 +671,22 @@ void mousePressed () {
   } 
 
   if (mouseX>= xCanvasFill1 && mouseX<= xCanvasFill1 + widthCanvasFill1 && mouseY>= yCanvasFill1 && mouseY<= yCanvasFill1 + heightCanvasFill1 ) {
-    if (drawingON==false) {
-      drawingON=true;
-    } else {
-      drawingON=false;
-    }
+    drawingON=true;
+    canvasFill1=true;
+    canvasFill2=false;
+    canvasFill3=false;
   }
   if (mouseX>= xCanvasFill2 && mouseX<= xCanvasFill2 + widthCanvasFill2 && mouseY>= yCanvasFill2 && mouseY<= yCanvasFill2 + heightCanvasFill2 ) {
-    if (surfaceBrown==false) {
-      surfaceBrown=true;
-      temp1ON=false; 
-      image1=false;
-      temp2ON=false;
-      image2=false;
-      temp3ON=false;
-      image3=false;
-      drawingON=false;
-      surfaceBlack=false;
-    }
+    drawingON=true;
+    canvasFill1=false;
+    canvasFill2=true;
+    canvasFill3=false;
   }
   if (mouseX>= xCanvasFill3 && mouseX<= xCanvasFill3 + widthCanvasFill3 && mouseY>= yCanvasFill3 && mouseY<= yCanvasFill3 + heightCanvasFill3 ) { 
-    if (surfaceBlack==false) {
-      surfaceBlack=true;
-      surfaceBrown=true;
-      temp1ON=false; 
-      image1=false;
-      temp2ON=false;
-      image2=false;
-      temp3ON=false;
-      image3=false;
-      drawingON=false;
-    }
+    drawingON=true;
+    canvasFill3=true;
+    canvasFill2=false;
+    canvasFill1=false;
   } 
   //
   brushButtonsMouse();
@@ -742,8 +698,6 @@ void mousePressed () {
       draw=true;
     }
   }
-
-  if (mouseX> xQuit && mouseX< xQuit+widthQuit && mouseY>yQuit && mouseY<yQuit+heightQuit) exit();
   //
 }//End mousePressed
 //
